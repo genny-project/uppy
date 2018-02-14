@@ -18,7 +18,7 @@ pipeline {
 		stage('Push') {
       when { branch 'master'}
 			steps {
-				sh "./push.sh"
+				sh "docker push gennyproject/uppy:${env.BRANCH_NAME}"
 			}
 		}
 		stage('Done') {
